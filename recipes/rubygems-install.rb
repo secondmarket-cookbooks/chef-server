@@ -91,6 +91,12 @@ server_gems.each do |gem|
   end
 end
 
+# Hax0ry to avoid gem resolution problems on startup of expander
+gem_package "eventmachine" do
+   version "1.0.0"
+   action :remove
+end
+
 chef_dirs = [
   node['chef_server']['log_dir'],
   node['chef_server']['path'],

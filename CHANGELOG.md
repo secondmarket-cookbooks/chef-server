@@ -1,3 +1,8 @@
+## unreleased
+
+* Bugfix for this convergence issue: https://gist.github.com/3795650
+* Work around Solr maxfieldlength issue: CHEF-2346. Stops our Windows nodes from converging
+
 ## v1.0.0:
 
 * [COOK-801] - add amazon linux

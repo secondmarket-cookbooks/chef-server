@@ -8,11 +8,13 @@ recipe            "chef-server", "Compacts the Chef Server CouchDB."
 recipe            "chef-server::rubygems-install", "Set up rubygem installed chef server."
 recipe            "chef-server::apache-proxy", "Configures Apache2 proxy for API and WebUI"
 recipe            "chef-server::nginx-proxy", "Configures NGINX proxy for API and WebUI"
+recipe            "chef-server::mtce-and-backup-jobs", "Configure backup job for Chef nightly"
+recipe            "chef-server::solr-maxfieldlength-workaround", "Add patch for too-short fieldnames in default Solr config"
 
 %w{ ubuntu debian redhat centos fedora amazon scientific freebsd openbsd }.each do |os|
   supports os
 end
 
-%w{ runit bluepill daemontools couchdb apache2 nginx openssl zlib xml java gecode }.each do |cb|
+%w{ aws python runit bluepill daemontools couchdb apache2 nginx openssl zlib xml java gecode }.each do |cb|
   depends cb
 end
